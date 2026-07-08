@@ -50,12 +50,12 @@ export default function ContactSection({ isLight }: { isLight: boolean }) {
     ];
 
     return (
-        <div className="max-w-[320px] text-[10px] uppercase tracking-widest leading-relaxed text-right">
+        <div className="max-w-full md:max-w-[320px] md:ml-auto text-[10px] uppercase tracking-widest leading-relaxed text-left md:text-right">
             <p className={`text-[14px] lg:text-[16px] font-semibold ${theme.textPrimary}`}>
                 CONTATO
             </p>
 
-            <div className={`mt-3 space-y-2 flex flex-col items-end ${theme.textMuted}`}>
+            <div className={`mt-3 space-y-2 flex flex-col items-start md:items-end ${theme.textMuted}`}>
                 {contacts.map((contact, index) => (
                     <a
                         key={index}
@@ -64,7 +64,7 @@ export default function ContactSection({ isLight }: { isLight: boolean }) {
                         rel={contact.external ? 'noopener noreferrer' : undefined}
                         className={`group flex items-center justify-end gap-2 cursor-pointer transition-colors duration-300 ${theme.hoverText}`}
                     >
-                        <span className="group-hover:underline underline-offset-4 text-right">
+                        <span className="group-hover:underline underline-offset-4 text-left md:text-right">
                             {contact.label}
                         </span>
 

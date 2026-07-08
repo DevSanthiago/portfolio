@@ -5,7 +5,7 @@ export default function SpecialtiesSection({ isLight }: { isLight: boolean }) {
     const theme = useThemeColors(isLight);
 
     return (
-        <div className="max-w-[320px] text-[10px] uppercase tracking-widest leading-relaxed text-right font-light">
+        <div className="max-w-full md:max-w-[320px] md:ml-auto text-[10px] uppercase tracking-widest leading-relaxed text-left md:text-right font-light">
             <p
                 className={`
                     text-[14px] lg:text-[16px] font-semibold

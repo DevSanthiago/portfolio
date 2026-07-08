@@ -5,12 +5,12 @@ export default function ResumeSection({ isLight }: { isLight: boolean }) {
     const theme = useThemeColors(isLight);
 
     return (
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start md:items-end">
             <p className={`text-[14px] lg:text-[16px] font-semibold mb-8 pr-4 ${theme.textPrimary}`}>
                 CURRÍCULO
             </p>
 
-            <div className="flex flex-col gap-4 items-end pr-4">
+            <div className="flex flex-col gap-4 items-start md:items-end pr-4">
                 <a
                     href="/CurriculoDevSanthiagoSemFoto.pdf"
                     download="Curriculo_Santhiago_SemFoto.pdf"

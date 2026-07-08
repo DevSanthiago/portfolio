@@ -62,7 +62,7 @@ export default function App() {
   }
 
   return (
-    <div className={`${theme.bgPrimary} ${theme.textPrimary} min-h-screen w-full transition-colors duration-700 font-sans p-6 flex flex-col relative overflow-hidden`}>
+    <div className={`${theme.bgPrimary} ${theme.textPrimary} min-h-screen w-full transition-colors duration-700 font-sans p-3 md:p-6 flex flex-col relative md:overflow-hidden`}>
 
       <div className="absolute inset-0 z-0">
         <DotGrid
@@ -75,11 +75,11 @@ export default function App() {
         />
       </div>
 
-      <div className={`flex-1 border-[0.5px] ${theme.borderFrame} relative flex flex-col justify-between p-8 z-20 pointer-events-none ${activeSection === 'Projetos' ? 'overflow-visible' : 'overflow-hidden'}`}>
+      <div className={`flex-1 border-[0.5px] ${theme.borderFrame} relative flex flex-col justify-start md:justify-between p-5 md:p-8 z-20 pointer-events-none ${activeSection === 'Projetos' ? 'overflow-visible' : 'md:overflow-hidden'}`}>
 
         <div className="flex flex-col relative z-50">
           <header className="pointer-events-auto">
-            <h1 className="text-6xl font-extralight tracking-tighter uppercase">Santhiago</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tighter uppercase">Santhiago</h1>
             <p className={`text-[10px] uppercase tracking-[0.4em] mt-2 ${theme.textSubtitle}`}>
               Programador FullStack e Web Design
             </p>
@@ -96,7 +96,7 @@ export default function App() {
           />
         </div>
 
-        <div className={`absolute inset-8 pointer-events-none ${activeSection === 'Projetos' ? 'overflow-visible' : 'overflow-hidden'}`}>
+        <div className={`relative mt-10 flex-1 md:mt-0 md:flex-none md:absolute md:inset-8 pointer-events-none ${activeSection === 'Projetos' ? 'overflow-visible' : 'md:overflow-hidden'}`}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSection}
@@ -123,8 +123,8 @@ export default function App() {
                 ease: [0.22, 1, 0.36, 1],
               }}
               className={`pointer-events-auto ${activeSection === 'Projetos'
-                ? 'absolute left-0 top-0 w-full h-full overflow-visible'
-                : 'absolute right-0 bottom-0 max-w-[280px] text-right'
+                ? 'relative md:absolute left-0 top-0 w-full h-full overflow-visible'
+                : 'relative w-full max-w-full text-left md:absolute md:right-0 md:bottom-0 md:max-w-[280px] md:text-right'
                 }`}
             >
               {activeSection === 'Início' && (
@@ -157,7 +157,7 @@ export default function App() {
           </AnimatePresence>
         </div>
 
-        <div className="flex justify-between items-end relative z-50">
+        <div className="flex justify-between items-end relative z-50 mt-10 md:mt-0">
           <div className="flex flex-col gap-4 mb-2 pointer-events-auto">
             <div className="flex gap-3 items-center cursor-pointer" onClick={() => setIsLight(false)}>
               <div className={`w-4 h-4 border border-zinc-500 ${theme.themeToggleDarkBg}`} />

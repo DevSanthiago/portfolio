@@ -53,16 +53,16 @@ export default function CertificationsSection({ isLight }: { isLight: boolean })
     ];
 
     return (
-        <div className="max-w-[320px] text-[10px] uppercase tracking-widest leading-relaxed text-right">
-            <p className={`text-[14px] lg:text-[16px] font-semibold pr-5 ${theme.textPrimary}`}>
+        <div className="max-w-full md:max-w-[320px] md:ml-auto text-[10px] uppercase tracking-widest leading-relaxed text-left md:text-right">
+            <p className={`text-[14px] lg:text-[16px] font-semibold md:pr-5 ${theme.textPrimary}`}>
                 CERTIFICAÇÕES
             </p>
 
-            <div className={`mt-3 space-y-2 flex flex-col items-end ${theme.textMuted}`}>
+            <div className={`mt-3 space-y-2 flex flex-col items-start md:items-end ${theme.textMuted}`}>
                 {certifications.map((cert, index) => {
                     if (!cert.link) {
                         return (
-                            <p key={index} className="opacity-60 cursor-default pr-5">
+                            <p key={index} className="opacity-60 cursor-default md:pr-5">
                                 • {cert.name}
                             </p>
                         );
@@ -76,7 +76,7 @@ export default function CertificationsSection({ isLight }: { isLight: boolean })
                             rel="noopener noreferrer"
                             className={`group flex items-center justify-end gap-2 transition-colors duration-300 cursor-pointer ${theme.hoverText}`}
                         >
-                            <span className="group-hover:underline underline-offset-4 text-right">
+                            <span className="group-hover:underline underline-offset-4 text-left md:text-right">
                                 • {cert.name}
                             </span>
 
@@ -93,7 +93,7 @@ export default function CertificationsSection({ isLight }: { isLight: boolean })
                 })}
             </div>
 
-            <p className={`mt-6 italic pr-5 ${theme.textSecondary}`}>
+            <p className={`mt-6 italic md:pr-5 ${theme.textSecondary}`}>
                 Atualizado constantemente com certificações novas e credenciadas, com novas tecnologias e práticas de mercado.
             </p>
         </div>
