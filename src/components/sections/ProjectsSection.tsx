@@ -64,9 +64,24 @@ const projects = [
         link: 'https://github.com/DevSanthiago/PDA-SYSTEM'
     },
     {
-        title: 'Sync Tickets',
+        title: 'Ticket System',
         tech: 'C# / .NET 8 / MySQL / TS / React / Chakra UI / Framer',
-        link: 'https://github.com/DevSanthiago/Sync-Tickets'
+        link: 'https://github.com/DevSanthiago/ticket-system'
+    },
+    {
+        title: 'SDUI Ticket System',
+        tech: 'C# / .NET 8 / MySQL / React 19 / TS / Vite / Chakra UI / SignalR',
+        link: 'https://github.com/DevSanthiago/sdui-ticket-system'
+    },
+    {
+        title: 'PointO',
+        tech: 'C# / .NET 8 / Supabase / React 19 / TS / shadcn / Tailwind',
+        link: 'https://github.com/DevSanthiago/pointo'
+    },
+    {
+        title: 'Kekkin Andon Dashboard',
+        tech: 'C# / .NET 8 / React 19 / TS / Vite / Tailwind / Recharts',
+        link: 'https://github.com/DevSanthiago/kekkin-andon-dashboard'
     }
 ];
 
@@ -153,10 +168,33 @@ export default function ProjectsSection({
     return (
         <div
             ref={containerRef}
-            className="absolute right-0 top-0 h-full w-full overflow-hidden pr-6"
+            className="relative md:absolute md:right-0 md:top-0 w-full md:h-full md:overflow-hidden md:pr-6"
         >
+            {/* Mobile: lista tocável, sem depender de teclado */}
+            <div className="flex flex-col gap-6 md:hidden">
+                {projects.map((project) => (
+                    <a
+                        key={project.title}
+                        href={project.link || '#'}
+                        target={project.link ? '_blank' : '_self'}
+                        rel={project.link ? 'noopener noreferrer' : undefined}
+                        className="block active:opacity-70 transition-opacity"
+                    >
+                        <h2
+                            className={`text-2xl sm:text-3xl leading-tight font-extralight tracking-tight break-words ${theme.textPrimary}`}
+                        >
+                            {project.title}
+                        </h2>
+                        <p className={`mt-1 text-[10px] tracking-[0.3em] uppercase ${theme.textMuted}`}>
+                            {project.tech}
+                        </p>
+                    </a>
+                ))}
+            </div>
+
+            {/* Desktop: navegação por teclado/scroll com centralização */}
             <div
-                className="relative w-full flex flex-col gap-10 items-end transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                className="relative w-full hidden md:flex flex-col gap-10 items-end transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                 style={{ transform: `translateY(${translateY}px)` }}
             >
                 {projects.map((project, index) => {
