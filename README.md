@@ -30,7 +30,7 @@ Este portfólio foi construído como uma Single Page Application (SPA) focada em
 
 ### 🔹 Seções Dinâmicas
 - **Home:** Apresentação pessoal com cálculo de idade automatizado.
-- **Projetos:** Lista de projetos no estilo carrossel vertical com links diretos para o GitHub.
+- **Projetos:** Carrossel vertical navegável por teclado e roda do mouse no desktop; lista tocável no mobile — todos com links diretos para o GitHub.
 - **Certificações e Currículo:** Links para credenciais e downloads diretos de PDF do CV.
 
 ---
@@ -77,14 +77,14 @@ santhiago-portfolio/
 ## 🚀 Como Executar Localmente
 
 ### Pré-requisitos
-- Node.js v18 ou superior
+- Node.js v20 ou superior
 
 ### Passo a passo
 
 **1. Clone o repositório:**
 ```bash
-git clone https://github.com/DevSanthiago/santhiago-portfolio.git
-cd santhiago-portfolio
+git clone https://github.com/DevSanthiago/portfolio.git
+cd portfolio
 ```
 
 **2. Instale as dependências:**
